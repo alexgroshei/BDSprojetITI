@@ -71,7 +71,40 @@ class defaultCtrl extends jController {
             return $this->choixDuSport();
         }
         else
-            return $this->index();
+            return $this->ErreurConnexion();
+    }
+    
+    function ErreurConnexion() {
+        
+        jAuth::logout();
+
+        $rep = $this->getResponse('html');
+
+        /* @var $rep JResponseHtml */
+
+// pour la vue
+        $rep->bodyTpl = "erreurConnexion";
+
+// CSS
+        $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
+        $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink('http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css');
+
+// jQuery et jQuery UI
+        $rep->addJSLink('https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js');
+        $rep->addJSLink('https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js');
+
+// Formulaire
+        $connexionForm = jForms::create("BDS~connexionEtudiant");
+
+// Valeur des zones définies
+        $rep->body->assign('TITLE', 'Bienvenue sur la page de gestion d absences du Bureau Des Sports HEI');
+        $rep->body->assign('SUBTITLE', 'Connexion');
+        $rep->body->assign('FORMETUDIANT', $connexionForm);
+        $rep->body->assign('ERREUR', 'Identifiants incorrects');
+
+        return $rep;
+        
     }
 
     function deconnexion() {
