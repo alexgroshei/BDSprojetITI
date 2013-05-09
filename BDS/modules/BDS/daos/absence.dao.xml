@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dao xmlns="http://jelix.org/ns/dao/1.0">
+    <datasources>
+        <primarytable name="absence" realname="absence" primarykey="id_abs" />
+        <foreigntable name="monEtudiant" realname="etudiant" primarykey="id_etudiant" onforeignkey="id_etudiant" />
+    </datasources>
+    <record>
+        <property name="id_abs" fieldname="id_abs" datatype="bigint" autoincrement="true"/>
+        <property name="date_abs" fieldname="date_abs" datatype="date" default=""/>
+        <property name="justificatif" fieldname="justificatif" datatype="varchar" default="" maxlength="3"/>
+        <property name="excusee" fieldname="excusee" datatype="varchar" default="" maxlength="3"/>
+        <property name="id_etudiant" fieldname="id_etudiant" datatype="bigint" default=""/>
+        <!--<property name="" fieldname="" datatype="string/int/float/date"
+        required="yes" maxlength="" minlength="" regexp="" sequence=""
+        updatepattern="" insertpattern="" selectpattern=""/>-->
+        
+        <property name="nomEtudiant" fieldname="nom" datatype="varchar" table="monEtudiant" />
+        <property name="prenomEtudiant" fieldname="prenom" datatype="varchar" table="monEtudiant" />
+    </record>
+    <factory>
+        <!--<method name="findByStage" type="select/selectfirst/delete/update/php">
+            <parameter name="" />
+            <values>
+                <value property="" value="" />
+            </values>
+            <conditions logic="and/or">
+                <eq property="" value="" />
+            </conditions>
+            <order>
+                <orderitem property="" way="asc/desc" />
+            </order>
+            <limit offset="" count=""/>
+            <body><![CDATA[
+            ]]></body>
+        </method>-->
+    </factory>
+</dao>

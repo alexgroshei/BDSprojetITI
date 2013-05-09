@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns="http://jelix.org/ns/forms/1.1">
+
+    <menulist ref="id_sport">
+        <label>Choix du sport</label>
+        <datasource dao="BDS~sport" method="findAll" labelproperty="nom_sport" valueproperty="id_sport"/>
+    </menulist>
+    
+    <submit ref="submit">
+        <label>Valider</label>
+    </submit>        
+    
+</form>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://jelix.org/ns/forms/1.1">
+    
+    <hidden ref="id_abs"/>
+    <hidden ref="id_etudiant" />
+    
+    <input ref="nom">         
+        <label>Nom de l'etudiant</label>
+    </input>
+    
+    <input ref="prenom">
+        <label>Prenom de l'etudiant</label>
+    </input>
+    
+    <date ref="date_abs">
+        <label>Date de l'absence</label>
+    </date>
+    
+    <radiobuttons ref="justificatif">
+        <label>Justificatif ?</label>
+        <item value="Oui">Oui</item>
+        <item value="Non">Non</item>
+    </radiobuttons>
+    
+    <radiobuttons ref="excusee">
+        <label>Absence excusee ?</label>
+        <item value="Oui">Oui</item>
+        <item value="Non">Non</item>
+    </radiobuttons>
+    
+    <submit ref="submit">
+        <label>Valider</label>
+    </submit>
+    
+</form>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dao xmlns="http://jelix.org/ns/dao/1.0">
+    <datasources>
+        <primarytable name="equipe" realname="equipe" primarykey="id_sport,num_equipe" />
+        <!-- TEST JOINTURE POUR NOM SPORT
+        <foreigntable name="monSport" realname="sport" primarykey="id_sport" onforeignkey="id_sport" />
+        -->
+    </datasources>
+    <record>
+        <property name="id_sport" fieldname="id_sport" datatype="bigint" required="true"/>
+        <property name="num_equipe" fieldname="num_equipe" datatype="int" required="true"/>
+        <property name="nombre_seance" fieldname="nombre_seance" datatype="int" required="true"/>
+        <property name="id_resp" fieldname="id_resp" datatype="int" required="true"/>
+        <!--<property name="" fieldname="" datatype="string/int/float/date"
+        required="yes" maxlength="" minlength="" regexp="" sequence=""
+        updatepattern="" insertpattern="" selectpattern=""/>-->
+        
+        <!-- TEST JOINTURE POUR NOM SPORT
+        <property name="nomSport" fieldname="nom_sport" datatype="varchar" table="monSport" />
+        -->
+    </record>
+    <factory>
+        <!--<method name="findByStage" type="select/selectfirst/delete/update/php">
+            <parameter name="" />
+            <values>
+                <value property="" value="" />
+            </values>
+            <conditions logic="and/or">
+                <eq property="" value="" />
+            </conditions>
+            <order>
+                <orderitem property="" way="asc/desc" />
+            </order>
+            <limit offset="" count=""/>
+            <body><![CDATA[
+            ]]></body>
+        </method>-->
+    </factory>
+</dao>

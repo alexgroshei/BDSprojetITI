@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://jelix.org/ns/forms/1.1">
+    
+    <hidden ref="id_etudiant"/>
+    <hidden ref="id_sport" />
+    
+    <input ref="nom" required="true">
+        <label>Nom de l'etudiant</label>
+    </input>
+    
+    <input ref="prenom" required="true">
+        <label>Prenom de l'etudiant</label>
+    </input>
+    
+    <input ref="classe">
+        <label>Classe</label>
+        <help>Peut etre rempli ultérieurement</help>
+    </input>
+    
+    <input ref="tel">
+        <label>Numero de telephone</label>
+        <help>Peut etre rempli ultérieurement</help>
+    </input>
+    
+    <radiobuttons ref="possede_voiture">
+        <label>Possede une voiture ?</label>
+        <item value="Oui">Oui</item>
+        <item value="Non">Non</item>
+        <help>Peut etre rempli ultérieurement</help>
+    </radiobuttons>
+    
+    <input ref="num_licence">
+        <label>Numero de licence BDS</label>
+        <help>Peut etre rempli ultérieurement</help>
+    </input>
+    
+    <date ref="date_remise_certif">
+        <label>Date de remise du certificat medical</label>
+        <help>Peut etre rempli ultérieurement</help>
+    </date>
+    
+    <date ref="date_remise_cotis">
+        <label>Date de remise de la cotisation au BDS</label>
+        <help>Peut etre rempli ultérieurement</help>
+    </date>
+    
+    <input ref="nom_sport" required="true">
+        <label>Sport</label>
+    </input>
+    
+    <input ref="num_equipe" required="true">
+        <label>Equipe</label>
+    </input>
+    
+    <input ref="login" required="true">
+        <label>Choisir un login (adresse mail)</label>
+    </input>
+    
+    <input ref="password" required="true">
+        <label>Choisir un mot de passe</label>
+    </input>
+    
+    <submit ref="submit">
+        <label>Valider</label>
+    </submit>
+    
+
+</form>

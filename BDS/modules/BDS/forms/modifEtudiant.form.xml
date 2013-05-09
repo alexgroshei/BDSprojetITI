@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://jelix.org/ns/forms/1.1">
+    
+    <hidden ref="id_etudiant"/>
+    
+    <input ref="nom">
+        <label>Nom de l'etudiant</label>
+    </input>
+    
+    <input ref="prenom">
+        <label>Prenom de l'etudiant</label>
+    </input>
+    
+    <input ref="classe">
+        <label>Classe</label>
+    </input>
+    
+    <input ref="tel">
+        <label>Numero de telephone</label>
+    </input>
+    
+    <input ref="num_licence">
+        <label>Numero de licence BDS</label>
+    </input>
+    
+    <date ref="date_remise_certif">
+        <label>Date de remise du certificat medical</label>
+    </date>
+    
+    <date ref="date_remise_cotis">
+        <label>Date de remise de la cotisation au BDS</label>
+    </date>
+    
+    <radiobuttons ref="possede_voiture">
+        <label>L'etudiant possede-t-il une voiture ?</label>
+        <item value="Oui">Oui</item>
+        <item value="Non">Non</item>
+    </radiobuttons>
+       
+    <submit ref="submit">
+        <label>Valider</label>
+    </submit>
+    
+
+</form>

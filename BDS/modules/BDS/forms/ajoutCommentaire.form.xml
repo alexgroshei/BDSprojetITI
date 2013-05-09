@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://jelix.org/ns/forms/1.1">
+
+    
+    <hidden ref="id_sport" />
+    
+    <input ref="commentaire">
+        <label>Ajouter votre commentaire</label>
+    </input>
+    
+    <submit ref="submit">
+        <label>Valider</label>
+    </submit>
+    
+</form>

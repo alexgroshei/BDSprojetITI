@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://jelix.org/ns/module/1.0">
+    <info id="BDS@yourwebsite.undefined" name="BDS" createdate="2013-03-15">
+        <version date="2013-03-15">0.1pre</version>
+        <label lang="en_US">BDS</label>
+        <description lang="en_US" />
+        <license URL="">All rights reserved</license>
+        <copyright>2011 your name</copyright>
+        <creator name="your name" email="your-email@yourwebsite.undefined" active="true"/>
+        <!--<contributor name="hisname" email="hisemail@yoursite.undefined" active="true" since="" role=""/>-->
+        <homepageURL>http://www.yourwebsite.undefined</homepageURL>
+    </info>
+    <dependencies>
+        <jelix minversion="1.4.1" maxversion="1.4.*"/>
+    </dependencies>
+</module>

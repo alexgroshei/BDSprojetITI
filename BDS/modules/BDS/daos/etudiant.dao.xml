@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dao xmlns="http://jelix.org/ns/dao/1.0">
+    <datasources>
+        <primarytable name="etudiant" realname="etudiant" primarykey="id_etudiant" />
+        <!--<foreigntable name="mesAbsences" realname="absence" primarykey="id_abs" onforeignkey="id_absence" />-->
+    </datasources>
+    <record>
+        <property name="id_etudiant" fieldname="id_etudiant" datatype="bigint" autoincrement="true"/>
+        <property name="nom" fieldname="nom" datatype="varchar" required="true" maxlength="30"/>
+        <property name="prenom" fieldname="prenom" datatype="varchar" required="true" maxlength="30"/>
+        <property name="classe" fieldname="classe" datatype="varchar" default="" maxlength="5"/>
+        <property name="tel" fieldname="tel" datatype="char" default=""/>
+        <property name="possede_voiture" fieldname="possede_voiture" datatype="varchar" default="" maxlength="3"/>
+        <property name="num_licence" fieldname="num_licence" datatype="varchar" default="" maxlength="20"/>
+        <property name="date_remise_certif" fieldname="date_remise_certif" datatype="date" default=""/>
+        <property name="date_remise_cotis" fieldname="date_remise_cotis" datatype="date" default=""/>
+        <property name="id_sport" fieldname="id_sport" datatype="bigint" default=""/>
+        <property name="num_equipe" fieldname="num_equipe" datatype="int" default=""/>
+        <property name="id_absence" fieldname="id_absence" datatype="bigint" default=""/>
+        <property name="login" fieldname="login" datatype="varchar" required="true" maxlength="50"/>
+        <property name="password" fieldname="password" datatype="varchar" required="true" maxlength="50"/>
+        <!--<property name="" fieldname="" datatype="string/int/float/date"
+        required="yes" maxlength="" minlength="" regexp="" sequence=""
+        updatepattern="" insertpattern="" selectpattern=""/>-->
+                
+        <!--<property name="id" fieldname="id_abs" datatype="bigint" table="mesAbsences" />-->
+        
+    </record>
+    <factory>
+        <method name="getByLoginPassword" type="selectfirst">
+            <parameter name="login" />
+            <parameter name="password" />
+            <conditions>
+                <eq property="login" expr="$login" />
+                <eq property="password" expr="$password" />
+            </conditions>
+        </method>
+        <method name="getByLogin" type="selectfirst">
+            <parameter name="login" />
+            <conditions>
+                <eq property="login" expr="$login" />
+            </conditions>
+        </method>
+        <method name="updatePassword" type="update">
+            <parameter name="login" />
+            <parameter name="password" />
+            <values>
+                <value property="password" expr="$password"/>
+            </values>
+            <conditions>
+                <eq property="login" expr="$login" />
+            </conditions>
+        </method>
+        <method name="deleteByLogin" type="delete">
+            <parameter name="login" />
+            <conditions>
+                <eq property="login" expr="$login" />
+            </conditions>
+        </method>
+        <method name="findByLogin" type="select">
+            <parameter name="pattern" />
+            <conditions>
+                <like property="login" expr="$pattern" />
+            </conditions>
+            <order>
+                <orderitem property="login" way="asc" />
+            </order>
+        </method>
+        <method name="findAll" type="select">
+            <order>
+                <orderitem property="login" way="asc" />
+            </order>
+        </method>
+        <method type="selectfirst" name="getFewRecord" groupby="id_etudiant">
+
+            <order>
+                <orderitem property="id_etudiant" way="desc" />
+            </order>
+        </method>
+    </factory>
+</dao>
