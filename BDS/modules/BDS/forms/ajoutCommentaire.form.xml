@@ -4,9 +4,9 @@
     
     <hidden ref="id_sport" />
     
-    <input ref="commentaire">
+    <textarea ref="commentaire">
         <label>Ajouter votre commentaire</label>
-    </input>
+    </textarea>
     
     <submit ref="submit">
         <label>Valider</label>
