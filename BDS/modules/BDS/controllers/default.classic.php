@@ -26,7 +26,8 @@ class defaultCtrl extends jController {
         'ajouterAbsence' => array('auth.required' => true),
         'saveAbsenceToDao' => array('auth.required' => true),
         'afficherInfo' => array('auth.required' => true),
-        'afficherAbs' => array('auth.required' => true),
+        'afficherAbs' => array('auth.required' => true),        
+        'ErreurConnexion' => array('auth.required' => true),
     );
 
     function index() {
@@ -237,13 +238,10 @@ class defaultCtrl extends jController {
         $appartenirEqFactory = jDao::get("appartenir_eq");
         $record = $etudiantFactory->getFewRecord();
         $courantEtudiant->id_etudiant = $record->id_etudiant;
-
-        $appartenirEqFactory->insert($courantEtudiant);
-
         $courantEtudiant->num_equipe = $numEquipe;
         $courantEtudiant->id_sport = $idSport;
 
-        $appartenirEqFactory->update($courantEtudiant);
+        $appartenirEqFactory->insert($courantEtudiant);
 
         return $this->choixDuSport();
     }

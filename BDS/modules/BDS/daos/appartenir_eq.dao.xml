@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dao xmlns="http://jelix.org/ns/dao/1.0">
     <datasources>
-        <primarytable name="appartenir_eq" realname="appartenir_eq" primarykey="id_sport,num_equipe" />
+        <primarytable name="appartenir_eq" realname="appartenir_eq" primarykey="id_sport,num_equipe,id_etudiant" />
         <foreigntable name="monEquipe" realname="equipe" primarykey="id_sport,num_equipe" 
                       onforeignkey="id_sport,num_equipe" />
         <foreigntable name="monEtudiant" realname="etudiant" primarykey="id_etudiant" onforeignkey="id_etudiant" />
+
     </datasources>
     <record>
         <property name="id_sport" fieldname="id_sport" datatype="bigint" required="true"/>
@@ -13,7 +14,6 @@
         <!--<property name="" fieldname="" datatype="string/int/float/date"
         required="yes" maxlength="" minlength="" regexp="" sequence=""
         updatepattern="" insertpattern="" selectpattern=""/>-->
-        
         <property name="nomEtudiant" fieldname="nom" datatype="varchar" table="monEtudiant" />
         <property name="prenomEtudiant" fieldname="prenom" datatype="varchar" table="monEtudiant" />
         <property name="classeEtudiant" fieldname="classe" datatype="varchar" table="monEtudiant" />

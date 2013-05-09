@@ -6748,3 +6748,76 @@ array (   'module' => 'BDS',   'action' => 'default:addEtudiantToDao',   'id_etu
 	2	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
 
 
+2013-05-09 21:30:07	127.0.0.1	error	2013-05-09 21:30:07	127.0.0.1	[403]	invalid query (Duplicata du champ '3-1' pour la clef 'PRIMARY'(INSERT INTO `appartenir_eq` (	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\plugins\db\mysql\mysql.dbconnection.php	128
+	/BDS/www/index.php/BDS/default/addEtudiantToDao
+array (   'module' => 'BDS',   'action' => 'default:addEtudiantToDao',   'id_etudiant' => '',   'id_sport' => '3',   '__JFORMS_TOKEN__' => '36d1e67ebcba8b7ed243de524108c584',   'nom' => 'test',   'prenom' => 'test',   'classe' => '44',   'tel' => '',   'num_licence' => '',   'date_remise_certif' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'date_remise_cotis' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'nom_sport' => 'Athletisme',   'num_equipe' => '1',   'login' => 'test@hei.fr',   'password' => 'test',   'submit' => 'Valider', )
+
+	0	mysqlDbConnection->_doExec()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\db\jDbConnection.class.php : 147
+	1	jDbConnection->exec()	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~appartenir_eq~mysql.php : 236
+	2	cDao_BDS_Jx_appartenir_eq_Jx_mysql->insert()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 241
+	3	defaultCtrl->addEtudiantToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	4	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-09 21:31:52	127.0.0.1	error	2013-05-09 21:31:52	127.0.0.1	[403]	invalid query (Duplicata du champ '3-1' pour la clef 'PRIMARY'(INSERT INTO `appartenir_eq` (	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\plugins\db\mysql\mysql.dbconnection.php	128
+	/BDS/www/index.php/BDS/default/addEtudiantToDao
+array (   'module' => 'BDS',   'action' => 'default:addEtudiantToDao',   'id_etudiant' => '',   'id_sport' => '3',   '__JFORMS_TOKEN__' => '36d1e67ebcba8b7ed243de524108c584',   'nom' => 'test',   'prenom' => 'test',   'classe' => '44',   'tel' => '',   'num_licence' => '',   'date_remise_certif' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'date_remise_cotis' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'nom_sport' => 'Athletisme',   'num_equipe' => '1',   'login' => 'test@hei.fr',   'password' => 'test',   'submit' => 'Valider', )
+
+	0	mysqlDbConnection->_doExec()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\db\jDbConnection.class.php : 147
+	1	jDbConnection->exec()	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~appartenir_eq~mysql.php : 236
+	2	cDao_BDS_Jx_appartenir_eq_Jx_mysql->insert()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 241
+	3	defaultCtrl->addEtudiantToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	4	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-09 21:33:43	127.0.0.1	error	2013-05-09 21:33:43	127.0.0.1	[403]	invalid query (Duplicata du champ '3-1' pour la clef 'PRIMARY'(INSERT INTO `appartenir_eq` (	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\plugins\db\mysql\mysql.dbconnection.php	128
+	/BDS/www/index.php/BDS/default/addEtudiantToDao
+array (   'module' => 'BDS',   'action' => 'default:addEtudiantToDao',   'id_etudiant' => '',   'id_sport' => '3',   '__JFORMS_TOKEN__' => '36d1e67ebcba8b7ed243de524108c584',   'nom' => 'test',   'prenom' => 'test',   'classe' => '44',   'tel' => '',   'num_licence' => '',   'date_remise_certif' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'date_remise_cotis' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'nom_sport' => 'Athletisme',   'num_equipe' => '1',   'login' => 'test@hei.fr',   'password' => 'test',   'submit' => 'Valider', )
+
+	0	mysqlDbConnection->_doExec()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\db\jDbConnection.class.php : 147
+	1	jDbConnection->exec()	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~appartenir_eq~mysql.php : 236
+	2	cDao_BDS_Jx_appartenir_eq_Jx_mysql->insert()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 241
+	3	defaultCtrl->addEtudiantToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	4	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-09 21:56:12	127.0.0.1	error	2013-05-09 21:56:12	127.0.0.1	[403]	invalid query (Duplicata du champ '1' pour la clef 'PRIMARY'(INSERT INTO `appartenir_eq` (	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\plugins\db\mysql\mysql.dbconnection.php	128
+	/BDS/www/index.php/BDS/default/addEtudiantToDao
+array (   'module' => 'BDS',   'action' => 'default:addEtudiantToDao',   'id_etudiant' => '',   'id_sport' => '1',   '__JFORMS_TOKEN__' => 'b1822c8224f65b5f8396aea6dcf95c1d',   'nom' => 'Test',   'prenom' => 'Test',   'classe' => '44',   'tel' => '',   'num_licence' => '',   'date_remise_certif' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'date_remise_cotis' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'nom_sport' => 'Futsal',   'num_equipe' => '2',   'login' => 'test@hei.fr',   'password' => 'test',   'submit' => 'Valider', )
+
+	0	mysqlDbConnection->_doExec()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\db\jDbConnection.class.php : 147
+	1	jDbConnection->exec()	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~appartenir_eq~mysql.php : 236
+	2	cDao_BDS_Jx_appartenir_eq_Jx_mysql->insert()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 241
+	3	defaultCtrl->addEtudiantToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	4	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-09 22:28:09	127.0.0.1	error	2013-05-09 22:28:09	127.0.0.1	[403]	invalid query (Duplicata du champ '1-2-8' pour la clef 'PRIMARY'(UPDATE `appartenir_eq` SET 	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\plugins\db\mysql\mysql.dbconnection.php	128
+	/BDS/www/index.php/BDS/default/addEtudiantToDao
+array (   'module' => 'BDS',   'action' => 'default:addEtudiantToDao',   'id_etudiant' => '',   'id_sport' => '1',   '__JFORMS_TOKEN__' => 'b1822c8224f65b5f8396aea6dcf95c1d',   'nom' => 'Test2',   'prenom' => 'Test2',   'classe' => '',   'tel' => '',   'num_licence' => '',   'date_remise_certif' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'date_remise_cotis' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'nom_sport' => 'Futsal',   'num_equipe' => '2',   'login' => 'test2@hei.fr',   'password' => 'test2',   'submit' => 'Valider', )
+
+	0	mysqlDbConnection->_doExec()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\db\jDbConnection.class.php : 147
+	1	jDbConnection->exec()	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~appartenir_eq~mysql.php : 244
+	2	cDao_BDS_Jx_appartenir_eq_Jx_mysql->update()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 247
+	3	defaultCtrl->addEtudiantToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	4	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-09 22:34:26	127.0.0.1	error	2013-05-09 22:34:26	127.0.0.1	[502]	Update is impossible with this dao because table contains only primary keys (DAO: BDS~appartenir_eq, file: C:\Program Files (x86)\EasyPHP-12.1\www\BDS/modules/BDS/daos/appartenir_eq.dao.xml)	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~appartenir_eq~mysql.php	241
+	/BDS/www/index.php/BDS/default/addEtudiantToDao
+array (   'module' => 'BDS',   'action' => 'default:addEtudiantToDao',   'id_etudiant' => '',   'id_sport' => '1',   '__JFORMS_TOKEN__' => 'b1822c8224f65b5f8396aea6dcf95c1d',   'nom' => 'test3',   'prenom' => 'test3',   'classe' => '',   'tel' => '',   'num_licence' => '',   'date_remise_certif' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'date_remise_cotis' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'nom_sport' => 'Futsal',   'num_equipe' => '1',   'login' => 'test3@hei.fr',   'password' => 'test3',   'submit' => 'Valider', )
+
+	0	cDao_BDS_Jx_appartenir_eq_Jx_mysql->update()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 247
+	1	defaultCtrl->addEtudiantToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	2	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-09 22:40:19	127.0.0.1	error	2013-05-09 22:40:19	127.0.0.1	[502]	Update is impossible with this dao because table contains only primary keys (DAO: BDS~appartenir_eq, file: C:\Program Files (x86)\EasyPHP-12.1\www\BDS/modules/BDS/daos/appartenir_eq.dao.xml)	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~appartenir_eq~mysql.php	241
+	/BDS/www/index.php/BDS/default/addEtudiantToDao
+array (   'module' => 'BDS',   'action' => 'default:addEtudiantToDao',   'id_etudiant' => '',   'id_sport' => '1',   '__JFORMS_TOKEN__' => 'b1822c8224f65b5f8396aea6dcf95c1d',   'nom' => 'test4',   'prenom' => 'test4',   'classe' => '',   'tel' => '',   'num_licence' => '',   'date_remise_certif' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'date_remise_cotis' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'nom_sport' => 'Futsal',   'num_equipe' => '1',   'login' => 'test4@hei.fr',   'password' => 'test4',   'submit' => 'Valider', )
+
+	0	cDao_BDS_Jx_appartenir_eq_Jx_mysql->update()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 247
+	1	defaultCtrl->addEtudiantToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	2	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
