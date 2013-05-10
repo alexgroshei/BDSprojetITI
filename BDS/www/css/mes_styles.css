@@ -9,10 +9,59 @@ h1.apptitle
 {
     text-align: center;
     background-color: #719694;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
-div.block h2 {
+div#navigation
+{
+    position: absolute;
+    width: 300px;
+    top: 10px;
+    left: 75%
+}
+
+div.block h2 
+{
     background-color: #729671;
     color : white;
     text-align: center;
+}
+
+div#navigation h2
+{
+    height: 10px;
+    font-size: smaller;
+}
+
+a
+{
+    text-decoration: none;    
+}
+
+a:hover
+{    
+    background-color: transparent;
+    color: green;
+    font-style: italic;
+}
+
+a[id$="supprimer"]:hover {
+    color: red;
+    font-weight: bold;
+    font-style: normal;
+}
+
+#liens
+{
+    position: relative;
+    left: 20%;
+    bottom: 20px;
+    border: dashed 1px #000;
+    border-radius: 10px;
+    width: 500px;
+    text-align: center;
+    height: 35px;
+    font-weight: normal;
+    font-style: normal;
 }

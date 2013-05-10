@@ -368,16 +368,15 @@ class defaultCtrl extends jController {
     }
 
     function saveSportToDao() {
-
+      
         $sportFactory = jDao::get("BDS~sport");
         $record = jDao::createRecord("BDS~sport");
-
-//$record->id_sport = $this->param('id_sport');
+        
         $record->nom_sport = $this->param('nom_sport');
         $record->commentaire = $this->param('commentaire');
 
         $sportFactory->insert($record);
-
+        
         return $this->choixDuSport();
     }
 

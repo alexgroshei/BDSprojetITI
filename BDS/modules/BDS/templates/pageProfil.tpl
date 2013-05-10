@@ -4,7 +4,7 @@
     <h2>{$SUBTITLE1}</h2>
     <div class="blockcontent">
         <ul>
-            {$COMPTEUR} étudiant(s) présent(s) dans ce sport. <br><br>
+            {$COMPTEUR} étudiant(s) présent(s) dans ce sport. <br><br><br>
 
             {foreach $LISTETUDIANTSPORT as $COURANTETUDIANTSPORT}
 
@@ -12,26 +12,28 @@
                     {$COURANTETUDIANTSPORT->prenomEtudiant} 
                     - Equipe {$COURANTETUDIANTSPORT->num_equipe}<br>
 
-                    <a href="{jurl 'BDS~updateEtudiant@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}">
-                        [Modifier]
-                    </a>
+                    <div id="liens">
+                        <a href="{jurl 'BDS~updateEtudiant@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}">
+                            [Modifier]
+                        </a>
 
-                    <a href="{jurl 'BDS~deleteEtudiant@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}"
-                       onclick="return confirmDelete()">
-                        [Supprimer]
-                    </a>
+                        <a id="supprimer" href="{jurl 'BDS~deleteEtudiant@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}"
+                           onclick="return confirmDelete()">
+                            [Supprimer]
+                        </a>
 
-                    <a href="{jurl 'BDS~afficherInfo@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}">
-                        [Informations]
-                    </a><br> 
+                        <a href="{jurl 'BDS~afficherInfo@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}">
+                            [Informations]
+                        </a><br> 
 
-                    <a href="{jurl 'BDS~ajouterAbsence@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}">
-                        [Ajouter Absence]
-                    </a>
+                        <a href="{jurl 'BDS~ajouterAbsence@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}">
+                            [Ajouter Absence]
+                        </a>
 
-                    <a href="{jurl 'BDS~afficherAbs@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}">
-                        [Visualiser absences]
-                    </a>
+                        <a href="{jurl 'BDS~afficherAbs@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}">
+                            [Visualiser absences]
+                        </a>
+                    </div>
 
                 </li><br>
             {/foreach}

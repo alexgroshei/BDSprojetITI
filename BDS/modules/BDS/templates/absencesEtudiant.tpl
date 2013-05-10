@@ -3,7 +3,7 @@
 <div class="block">
     <h2>{$SUBTITLE}</h2>
     <div class="blockcontent">
-        L'etudiant a {$COMPTEURABS} absence(s).
+        L'etudiant a {$COMPTEURABS} absence(s).<br><br>
         {foreach $ABSENCES as $COURANTABS}
             <li>
                 Date : {$COURANTABS->date_abs} - 

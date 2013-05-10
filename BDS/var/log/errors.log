@@ -6821,3 +6821,108 @@ array (   'module' => 'BDS',   'action' => 'default:addEtudiantToDao',   'id_etu
 	2	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
 
 
+2013-05-10 12:06:35	127.0.0.1	error	2013-05-10 12:06:35	127.0.0.1	[403]	invalid query (Cannot add or update a child row: a foreign key constraint fails (`bds_absences`.`appartenir_eq`, CONSTRAINT `appartenir_eq_ibfk_2` FOREIGN KEY (`id_sport`) REFERENCES `equipe` (`id_sport`) ON DELETE CASCADE ON UPDATE CASCADE)(INSERT INTO `appartenir_eq` (	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\plugins\db\mysql\mysql.dbconnection.php	128
+	/BDS/www/index.php/BDS/default/addEtudiantToDao
+array (   'module' => 'BDS',   'action' => 'default:addEtudiantToDao',   'id_etudiant' => '',   'id_sport' => '36',   '__JFORMS_TOKEN__' => 'e1aae88a81a0abf3c482cd6d61cdf653',   'nom' => 'Tardy',   'prenom' => 'Pierre',   'classe' => '',   'tel' => '',   'num_licence' => '',   'date_remise_certif' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'date_remise_cotis' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'nom_sport' => 'BDS',   'num_equipe' => '1',   'login' => 'pierre.tardy@hei.fr',   'password' => 'bdsadmin',   'submit' => 'Valider', )
+
+	0	mysqlDbConnection->_doExec()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\db\jDbConnection.class.php : 147
+	1	jDbConnection->exec()	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~appartenir_eq~mysql.php : 237
+	2	cDao_BDS_Jx_appartenir_eq_Jx_mysql->insert()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 249
+	3	defaultCtrl->addEtudiantToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	4	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-10 12:16:21	127.0.0.1	notice	2013-05-10 12:16:21	127.0.0.1	[8]	Undefined property: cDaoRecord_BDS_Jx_sport_Jx_mysql::$nombre_seance	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~equipe~mysql.php	152
+	/BDS/www/index.php/BDS/default/saveSportToDao
+array (   'module' => 'BDS',   'action' => 'default:saveSportToDao',   'id_sport' => '',   '__JFORMS_TOKEN__' => '6b63b675b98df2eebf63beba6b6ae56f',   'nom_sport' => 'Test',   'commentaire' => '',   'submit' => 'Valider', )
+
+	0	cDao_BDS_Jx_equipe_Jx_mysql->insert()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 385
+	1	defaultCtrl->saveSportToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	2	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-10 12:16:21	127.0.0.1	notice	2013-05-10 12:16:21	127.0.0.1	[8]	Undefined property: cDaoRecord_BDS_Jx_sport_Jx_mysql::$id_resp	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~equipe~mysql.php	152
+	/BDS/www/index.php/BDS/default/saveSportToDao
+array (   'module' => 'BDS',   'action' => 'default:saveSportToDao',   'id_sport' => '',   '__JFORMS_TOKEN__' => '6b63b675b98df2eebf63beba6b6ae56f',   'nom_sport' => 'Test',   'commentaire' => '',   'submit' => 'Valider', )
+
+	0	cDao_BDS_Jx_equipe_Jx_mysql->insert()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 385
+	1	defaultCtrl->saveSportToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	2	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-10 12:16:21	127.0.0.1	error	2013-05-10 12:16:21	127.0.0.1	[403]	invalid query (Le champ 'num_equipe' ne peut être vide (null)(INSERT INTO `equipe` (	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\plugins\db\mysql\mysql.dbconnection.php	128
+	/BDS/www/index.php/BDS/default/saveSportToDao
+array (   'module' => 'BDS',   'action' => 'default:saveSportToDao',   'id_sport' => '',   '__JFORMS_TOKEN__' => '6b63b675b98df2eebf63beba6b6ae56f',   'nom_sport' => 'Test',   'commentaire' => '',   'submit' => 'Valider', )
+
+	0	mysqlDbConnection->_doExec()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\db\jDbConnection.class.php : 147
+	1	jDbConnection->exec()	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~equipe~mysql.php : 154
+	2	cDao_BDS_Jx_equipe_Jx_mysql->insert()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 385
+	3	defaultCtrl->saveSportToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	4	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-10 12:16:57	127.0.0.1	error	2013-05-10 12:16:57	127.0.0.1	[403]	invalid query (Le champ 'num_equipe' ne peut être vide (null)(INSERT INTO `equipe` (	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\plugins\db\mysql\mysql.dbconnection.php	128
+	/BDS/www/index.php/BDS/default/saveSportToDao
+array (   'module' => 'BDS',   'action' => 'default:saveSportToDao',   'id_sport' => '',   '__JFORMS_TOKEN__' => '6b63b675b98df2eebf63beba6b6ae56f',   'nom_sport' => 'Test',   'commentaire' => '',   'submit' => 'Valider', )
+
+	0	mysqlDbConnection->_doExec()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\db\jDbConnection.class.php : 147
+	1	jDbConnection->exec()	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~equipe~mysql.php : 154
+	2	cDao_BDS_Jx_equipe_Jx_mysql->insert()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 386
+	3	defaultCtrl->saveSportToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	4	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-10 12:25:15	127.0.0.1	error	2013-05-10 12:25:15	127.0.0.1	[552]	DAO BDS~sport, method getFewRecord, property on item order id_etudiant is unknown (file C:\Program Files (x86)\EasyPHP-12.1\www\BDS/modules/BDS/daos/sport.dao.xml)	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\dao\jDaoMethod.class.php	301
+	/BDS/www/index.php/BDS/default/connexion
+array (   'module' => 'BDS',   'action' => 'default:connexion',   '__JFORMS_TOKEN__' => '0f9afdc70701bf90793b98890426eaac',   'login' => 'jeremy.martos@hei.fr',   'password' => 'jerem',   'submit' => 'Se connecter', )
+
+	0	jDaoMethod->_addOrder()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\dao\jDaoMethod.class.php : 134
+	1	jDaoMethod->__construct()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\dao\jDaoParser.class.php : 136
+	2	jDaoParser->parseFactory()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\dao\jDaoParser.class.php : 88
+	3	jDaoParser->parse()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\dao\jDaoCompiler.class.php : 55
+	4	jDaoCompiler->compile()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jIncluder.class.php : 103
+	5	jIncluder::inc()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\dao\jDao.class.php : 39
+	6	jDao::create()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\dao\jDao.class.php : 62
+	7	jDao::get()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsDatasource.class.php : 158
+	8	jFormsDaoDatasource->getData()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsBuilderHtml.class.php : 665
+	9	jFormsBuilderHtml->fillSelect()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsBuilderHtml.class.php : 717
+	10	jFormsBuilderHtml->outputMenulist()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsBuilderHtml.class.php : 248
+	11	jFormsBuilderHtml->outputControl()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsBuilderHtml.class.php : 40
+	12	jFormsBuilderHtml->outputAllControls()	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\templates\modules\BDS\choixSport_html_t.php : 18
+	13	template_def59df1b323f3209519fd4882bd988e()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\tpl\jTpl.class.php : 284
+	14	jTpl->fetch()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\response\jResponseHtml.class.php : 191
+	15	jResponseHtml->output()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 204
+	16	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-10 12:26:33	127.0.0.1	error	2013-05-10 12:26:33	127.0.0.1	[403]	invalid query (Le champ 'num_equipe' ne peut être vide (null)(INSERT INTO `equipe` (	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\plugins\db\mysql\mysql.dbconnection.php	128
+	/BDS/www/index.php/BDS/default/saveSportToDao
+array (   'module' => 'BDS',   'action' => 'default:saveSportToDao',   'id_sport' => '',   '__JFORMS_TOKEN__' => '6b63b675b98df2eebf63beba6b6ae56f',   'nom_sport' => 'Test',   'commentaire' => '',   'submit' => 'Valider', )
+
+	0	mysqlDbConnection->_doExec()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\db\jDbConnection.class.php : 147
+	1	jDbConnection->exec()	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~equipe~mysql.php : 154
+	2	cDao_BDS_Jx_equipe_Jx_mysql->insert()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 386
+	3	defaultCtrl->saveSportToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	4	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-10 12:33:14	127.0.0.1	error	2013-05-10 12:33:14	127.0.0.1	[835]	 The token of the form is not valid, you should fill the form from the original web page	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsBase.class.php	151
+	/BDS/www/index.php/BDS/default/saveSportToDao
+array (   'module' => 'BDS',   'action' => 'default:saveSportToDao',   'id_sport' => '',   '__JFORMS_TOKEN__' => '6b63b675b98df2eebf63beba6b6ae56f',   'nom_sport' => 'Test',   'commentaire' => 'Test',   'submit' => 'Valider', )
+
+	0	jFormsBase->initFromRequest()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jForms.class.php : 118
+	1	jForms::fill()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 372
+	2	defaultCtrl->saveSportToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	3	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-10 12:34:10	127.0.0.1	error	2013-05-10 12:34:10	127.0.0.1	[835]	 The token of the form is not valid, you should fill the form from the original web page	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsBase.class.php	151
+	/BDS/www/index.php/BDS/default/saveSportToDao
+array (   'module' => 'BDS',   'action' => 'default:saveSportToDao',   'id_sport' => '',   '__JFORMS_TOKEN__' => '6b63b675b98df2eebf63beba6b6ae56f',   'nom_sport' => 'Test',   'commentaire' => 'Test',   'submit' => 'Valider', )
+
+	0	jFormsBase->initFromRequest()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jForms.class.php : 118
+	1	jForms::fill()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 373
+	2	defaultCtrl->saveSportToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	3	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
