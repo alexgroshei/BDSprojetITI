@@ -1,0 +1,18 @@
+/* 
+    Document   : mes_styles
+    Author     : GROS Alexandre - FILLIETTE Florent
+    Description:
+        CSS général
+*/
+
+h1.apptitle
+{
+    text-align: center;
+    background-color: #719694;
+}
+
+div.block h2 {
+    background-color: #729671;
+    color : white;
+    text-align: center;
+}

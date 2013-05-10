@@ -68,7 +68,7 @@
     </div>
 </div>
 
-<div class="block">
+<div class="block" id="navigation">
     <h2>{$SUBTITLE5}</h2>
     <div class="blockcontent">
         <a href={jurl 'BDS~choixDuSport@classic'}>Retour Choix du sport</a> <br>

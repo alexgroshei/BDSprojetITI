@@ -24,5 +24,5 @@
 </div>
 
 <div id="logo">
-    <img src="{$j_basepath}image/logobds.jpg"/>
+    <a href="http://www.bds-hei.com/"><img src="{$j_basepath}image/logobds.jpg" /></a>
 </div>

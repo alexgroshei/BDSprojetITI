@@ -44,7 +44,6 @@ class defaultCtrl extends jController {
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');        
         $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles_connexion.css');
-        //$rep->addCSSLink('http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css');
 
 // jQuery et jQuery UI
         $rep->addJSLink('https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js');
@@ -54,7 +53,7 @@ class defaultCtrl extends jController {
         $connexionForm = jForms::create("BDS~connexionEtudiant");
 
 // Valeur des zones définies
-        $rep->body->assign('TITLE', 'Bienvenue sur la page de gestion d absences du Bureau Des Sports HEI');
+        $rep->body->assign('TITLE', 'Bienvenue sur la page de gestion d\'absences du Bureau Des Sports HEI');
         $rep->body->assign('SUBTITLE', 'Connexion');
         $rep->body->assign('SUBTITLE2', 'Description');
         $rep->body->assign('FORMETUDIANT', $connexionForm);
@@ -91,7 +90,6 @@ class defaultCtrl extends jController {
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');        
         $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles_connexion.css');
-        //$rep->addCSSLink('http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css');
 
 // jQuery et jQuery UI
         $rep->addJSLink('https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js');
@@ -101,7 +99,7 @@ class defaultCtrl extends jController {
         $connexionForm = jForms::create("BDS~connexionEtudiant");
 
 // Valeur des zones définies
-        $rep->body->assign('TITLE', 'Bienvenue sur la page de gestion d absences du Bureau Des Sports HEI');
+        $rep->body->assign('TITLE', 'Bienvenue sur la page de gestion d\'absences du Bureau Des Sports HEI');
         $rep->body->assign('SUBTITLE', 'Connexion');        
         $rep->body->assign('SUBTITLE2', 'Description');
         $rep->body->assign('FORMETUDIANT', $connexionForm);
@@ -127,6 +125,7 @@ class defaultCtrl extends jController {
 // CSS
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
 
         $choixSportForm = jForms::create("BDS~choixSportForm");
 
@@ -149,6 +148,7 @@ class defaultCtrl extends jController {
         //CSS
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
 
         //JS
         $rep->addCssLink('http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css');
@@ -198,6 +198,7 @@ class defaultCtrl extends jController {
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
 
         $sportChoisi = $this->param('id_sport');
 
@@ -225,6 +226,7 @@ class defaultCtrl extends jController {
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
 
         $idSport = $this->param('id_sport');
         $numEquipe = $this->param('num_equipe');
@@ -260,6 +262,7 @@ class defaultCtrl extends jController {
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
 
         $paramIdStudent = $this->param('id_etudiant');
         $updateStudentForm = jForms::create("BDS~modifEtudiant", $paramIdStudent);
@@ -307,6 +310,7 @@ class defaultCtrl extends jController {
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
 
 //formulaire pour ajouter Etudiant 
         $sportChoisi = $this->param('id_sport');
@@ -349,6 +353,7 @@ class defaultCtrl extends jController {
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
 
 //formulaire pour ajouter Etudiant 
         $addSportForm = jForms::create("BDS~ajoutSport");
@@ -387,6 +392,7 @@ class defaultCtrl extends jController {
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
 
         // formulaire absences
         $paramIdStudent = $this->param('id_etudiant');
@@ -432,6 +438,7 @@ class defaultCtrl extends jController {
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
 
         // Factory etudiant
         $etudiantFactory = jDao::get('BDS~etudiant');
@@ -459,6 +466,7 @@ class defaultCtrl extends jController {
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
 
         // Factory absences
         $absFactory = jDao::get('BDS~absence');
@@ -468,7 +476,7 @@ class defaultCtrl extends jController {
         $absEtudiant = $absFactory->findBy($conditions);
         $countEtudiant = $absFactory->countBy($conditions);
 
-        $rep->body->assign('TITLE', 'Absences etudiant');
+        $rep->body->assign('TITLE', 'Absences de l\'etudiant');
         $rep->body->assign('SUBTITLE', 'Liste des absences');
         $rep->body->assign('SUBTITLE2', 'Navigation');
         $rep->body->assign('ABSENCES', $absEtudiant);
