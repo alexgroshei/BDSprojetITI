@@ -19,6 +19,7 @@
         <property name="id_absence" fieldname="id_absence" datatype="bigint" default=""/>
         <property name="login" fieldname="login" datatype="varchar" required="true" maxlength="50"/>
         <property name="password" fieldname="password" datatype="varchar" required="true" maxlength="50"/>
+        <property name="profil" fieldname="profil" datatype="tinyint" required="true"/>
         <!--<property name="" fieldname="" datatype="string/int/float/date"
         required="yes" maxlength="" minlength="" regexp="" sequence=""
         updatepattern="" insertpattern="" selectpattern=""/>-->

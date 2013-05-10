@@ -46,3 +46,8 @@ div#logo img{
     border-radius: 15px;
     margin-left: 42%;
 }
+
+#lienImage:hover
+{
+    background-color: transparent;
+}

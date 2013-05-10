@@ -60,6 +60,13 @@
         <label>Choisir un mot de passe</label>
     </input>
     
+    <radiobuttons ref="profil" required="true">
+        <label>Choix des droits</label>
+        <item value="0">Membre du BDS</item>
+        <item value="1">VP</item>
+        <item value="2">Simple utilisateur</item>
+    </radiobuttons>
+    
     <submit ref="submit">
         <label>Valider</label>
     </submit>

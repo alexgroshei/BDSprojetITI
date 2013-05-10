@@ -42,8 +42,8 @@ class defaultCtrl extends jController {
 
 // CSS
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
-        $rep->addCSSLink($chemin . 'jelix.css');        
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles_connexion.css');
+        $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles_connexion.css');
 
 // jQuery et jQuery UI
         $rep->addJSLink('https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js');
@@ -69,14 +69,25 @@ class defaultCtrl extends jController {
         jAuth::login($login, $password, true);
 
         if (jAuth::isConnected()) {
-            return $this->choixDuSport();
+            $user = jAuth::getUserSession();
+            $profilUser = $user->profil;
+
+            if ($profilUser == 0) {
+                return $this->choixDuSport();
+            } else {
+                if ($profilUser == 1) {
+                    return $this->choixDuSportVP();
+                } else {
+                    return $this->choixDuSportSU();
+                }
+            }
         }
         else
             return $this->ErreurConnexion();
     }
-    
+
     function ErreurConnexion() {
-        
+
         jAuth::logout();
 
         $rep = $this->getResponse('html');
@@ -88,8 +99,8 @@ class defaultCtrl extends jController {
 
 // CSS
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
-        $rep->addCSSLink($chemin . 'jelix.css');        
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles_connexion.css');
+        $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles_connexion.css');
 
 // jQuery et jQuery UI
         $rep->addJSLink('https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js');
@@ -100,13 +111,12 @@ class defaultCtrl extends jController {
 
 // Valeur des zones définies
         $rep->body->assign('TITLE', 'Bienvenue sur la page de gestion d\'absences du Bureau Des Sports HEI');
-        $rep->body->assign('SUBTITLE', 'Connexion');        
+        $rep->body->assign('SUBTITLE', 'Connexion');
         $rep->body->assign('SUBTITLE2', 'Description');
         $rep->body->assign('FORMETUDIANT', $connexionForm);
         $rep->body->assign('ERREUR', 'Identifiants incorrects');
 
         return $rep;
-        
     }
 
     function deconnexion() {
@@ -125,7 +135,55 @@ class defaultCtrl extends jController {
 // CSS
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
+
+        $choixSportForm = jForms::create("BDS~choixSportForm");
+
+// liste vers vue
+        $rep->body->assign('TITLE', 'Choix du sport');
+        $rep->body->assign('SUBTITLE', 'Veuillez choisir votre sport');
+        $rep->body->assign('SUBTITLE2', 'Navigation');
+        $rep->body->assign('FORMCHOIXSPORT', $choixSportForm);
+
+        return $rep;
+    }
+
+    function choixDuSportVP() {
+        $rep = $this->getResponse('html');
+
+        /* @var $rep JResponseHtml */
+
+// pour la vue
+        $rep->bodyTpl = "choixSportVP";
+
+// CSS
+        $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
+        $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
+
+        $choixSportForm = jForms::create("BDS~choixSportForm");
+
+// liste vers vue
+        $rep->body->assign('TITLE', 'Choix du sport');
+        $rep->body->assign('SUBTITLE', 'Veuillez choisir votre sport');
+        $rep->body->assign('SUBTITLE2', 'Navigation');
+        $rep->body->assign('FORMCHOIXSPORT', $choixSportForm);
+
+        return $rep;
+    }
+
+    function choixDuSportSU() {
+        $rep = $this->getResponse('html');
+
+        /* @var $rep JResponseHtml */
+
+// pour la vue
+        $rep->bodyTpl = "choixSportSU";
+
+// CSS
+        $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
+        $rep->addCSSLink($chemin . 'jelix.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
         $choixSportForm = jForms::create("BDS~choixSportForm");
 
@@ -143,12 +201,23 @@ class defaultCtrl extends jController {
 
         /* @var $rep JResponseHtml */
 
-        $rep->bodyTpl = "pageProfil";
+        $user = jAuth::getUserSession();
+        $profilUser = $user->profil;
+
+        if ($profilUser == 0) {
+            $rep->bodyTpl = "pageProfil";
+        } else {
+            if ($profilUser == 1) {
+                $rep->bodyTpl = "pageProfilVP";
+            } else {
+                $rep->bodyTpl = "pageProfilSU";
+            }
+        }
 
         //CSS
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
         //JS
         $rep->addCssLink('http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css');
@@ -198,7 +267,7 @@ class defaultCtrl extends jController {
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
         $sportChoisi = $this->param('id_sport');
 
@@ -226,7 +295,7 @@ class defaultCtrl extends jController {
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
         $idSport = $this->param('id_sport');
         $numEquipe = $this->param('num_equipe');
@@ -234,11 +303,13 @@ class defaultCtrl extends jController {
         $addStudentForm = jForms::fill("BDS~ajoutEtudiant", $idSport);
         $addStudentForm->initFromRequest();
 
-        $result = $addStudentForm->prepareDaoFromControls('BDS~etudiant');
-        $etudiantFactory = $result['dao'];
-        $courantEtudiant = $result['daorec'];
+        if ($addStudentForm->check()) {
+            $result = $addStudentForm->prepareDaoFromControls('BDS~etudiant');
+            $etudiantFactory = $result['dao'];
+            $courantEtudiant = $result['daorec'];
 
-        $etudiantFactory->insert($courantEtudiant);
+            $etudiantFactory->insert($courantEtudiant);
+        }
 
         $appartenirEqFactory = jDao::get("appartenir_eq");
         $record = $etudiantFactory->getFewRecord();
@@ -247,6 +318,7 @@ class defaultCtrl extends jController {
         $courantEtudiant->id_sport = $idSport;
 
         $appartenirEqFactory->insert($courantEtudiant);
+
 
         return $this->choixDuSport();
     }
@@ -262,7 +334,7 @@ class defaultCtrl extends jController {
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
         $paramIdStudent = $this->param('id_etudiant');
         $updateStudentForm = jForms::create("BDS~modifEtudiant", $paramIdStudent);
@@ -310,7 +382,7 @@ class defaultCtrl extends jController {
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
 //formulaire pour ajouter Etudiant 
         $sportChoisi = $this->param('id_sport');
@@ -353,7 +425,7 @@ class defaultCtrl extends jController {
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
 //formulaire pour ajouter Etudiant 
         $addSportForm = jForms::create("BDS~ajoutSport");
@@ -368,15 +440,15 @@ class defaultCtrl extends jController {
     }
 
     function saveSportToDao() {
-      
+
         $sportFactory = jDao::get("BDS~sport");
         $record = jDao::createRecord("BDS~sport");
-        
+
         $record->nom_sport = $this->param('nom_sport');
         $record->commentaire = $this->param('commentaire');
 
         $sportFactory->insert($record);
-        
+
         return $this->choixDuSport();
     }
 
@@ -386,12 +458,19 @@ class defaultCtrl extends jController {
 
         /* @var $rep jResponseHtml */
 
-        $rep->bodyTpl = "ajoutAbs";
+        $user = jAuth::getUserSession();
+        $profilUser = $user->profil;
+
+        if ($profilUser == 0) {
+            $rep->bodyTpl = "ajoutAbs";
+        } else {
+            $rep->bodyTpl = "ajoutAbsVP";
+        }
 
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
         // formulaire absences
         $paramIdStudent = $this->param('id_etudiant');
@@ -423,7 +502,14 @@ class defaultCtrl extends jController {
         $courantAbs->id_etudiant = $idEtudiant;
         $absFactory->update($courantAbs);
 
-        return $this->choixDuSport();
+        $user = jAuth::getUserSession();
+        $profilUser = $user->profil;
+
+        if ($profilUser == 0) {
+            return $this->choixDuSport();
+        } else {
+            return $this->choixDuSportVP();
+        }
     }
 
     function afficherInfo() {
@@ -432,12 +518,23 @@ class defaultCtrl extends jController {
 
         /* @var $rep jResponseHtml */
 
-        $rep->bodyTpl = "infoEtudiant";
+        $user = jAuth::getUserSession();
+        $profilUser = $user->profil;
+
+        if ($profilUser == 0) {
+            $rep->bodyTpl = "infoEtudiant";
+        } else {
+            if ($profilUser == 1) {
+                $rep->bodyTpl = "infoEtudiantVP";
+            } else {
+                $rep->bodyTpl = "infoEtudiantSU";
+            }
+        }
 
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
         // Factory etudiant
         $etudiantFactory = jDao::get('BDS~etudiant');
@@ -460,12 +557,23 @@ class defaultCtrl extends jController {
 
         /* @var $rep jResponseHtml */
 
-        $rep->bodyTpl = "absencesEtudiant";
+        $user = jAuth::getUserSession();
+        $profilUser = $user->profil;
+
+        if ($profilUser == 0) {
+            $rep->bodyTpl = "absencesEtudiant";
+        } else {
+            if ($profilUser == 1) {
+                $rep->bodyTpl = "absencesEtudiantVP";
+            } else {
+                $rep->bodyTpl = "absencesEtudiantSU";
+            }
+        }
 
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles.css');
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
         // Factory absences
         $absFactory = jDao::get('BDS~absence');
