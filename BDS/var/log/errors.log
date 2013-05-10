@@ -6965,3 +6965,62 @@ array (   'id_etudiant' => '1',   'module' => 'BDS',   'action' => 'default:affi
 	5	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
 
 
+2013-05-10 19:24:46	127.0.0.1	warning	2013-05-10 19:24:46	127.0.0.1	[2]	DOMDocument::load(): Opening and ending tag mismatch: br line 22 and help in file:///C:/Program%20Files%20(x86)/EasyPHP-12.1/www/BDS/modules/BDS/forms/ajoutEtudiant.form.xml, line: 22	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsCompiler.class.php	34
+	/BDS/www/index.php/BDS/default/addEtudiant?id_sport=1
+array (   'id_sport' => '1',   'module' => 'BDS',   'action' => 'default:addEtudiant', )
+
+	0	DOMDocument->load()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsCompiler.class.php : 34
+	1	jFormsCompiler->compile()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jIncluder.class.php : 103
+	2	jIncluder::inc()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jForms.class.php : 56
+	3	jForms::create()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 281
+	4	defaultCtrl->addEtudiant()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	5	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-10 19:24:46	127.0.0.1	warning	2013-05-10 19:24:46	127.0.0.1	[2]	DOMDocument::load(): Opening and ending tag mismatch: help line 22 and input in file:///C:/Program%20Files%20(x86)/EasyPHP-12.1/www/BDS/modules/BDS/forms/ajoutEtudiant.form.xml, line: 23	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsCompiler.class.php	34
+	/BDS/www/index.php/BDS/default/addEtudiant?id_sport=1
+array (   'id_sport' => '1',   'module' => 'BDS',   'action' => 'default:addEtudiant', )
+
+	0	DOMDocument->load()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsCompiler.class.php : 34
+	1	jFormsCompiler->compile()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jIncluder.class.php : 103
+	2	jIncluder::inc()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jForms.class.php : 56
+	3	jForms::create()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 281
+	4	defaultCtrl->addEtudiant()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	5	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-10 19:24:46	127.0.0.1	warning	2013-05-10 19:24:46	127.0.0.1	[2]	DOMDocument::load(): Opening and ending tag mismatch: input line 20 and form in file:///C:/Program%20Files%20(x86)/EasyPHP-12.1/www/BDS/modules/BDS/forms/ajoutEtudiant.form.xml, line: 75	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsCompiler.class.php	34
+	/BDS/www/index.php/BDS/default/addEtudiant?id_sport=1
+array (   'id_sport' => '1',   'module' => 'BDS',   'action' => 'default:addEtudiant', )
+
+	0	DOMDocument->load()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsCompiler.class.php : 34
+	1	jFormsCompiler->compile()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jIncluder.class.php : 103
+	2	jIncluder::inc()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jForms.class.php : 56
+	3	jForms::create()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 281
+	4	defaultCtrl->addEtudiant()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	5	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-10 19:24:46	127.0.0.1	warning	2013-05-10 19:24:46	127.0.0.1	[2]	DOMDocument::load(): Premature end of data in tag form line 2 in file:///C:/Program%20Files%20(x86)/EasyPHP-12.1/www/BDS/modules/BDS/forms/ajoutEtudiant.form.xml, line: 75	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsCompiler.class.php	34
+	/BDS/www/index.php/BDS/default/addEtudiant?id_sport=1
+array (   'id_sport' => '1',   'module' => 'BDS',   'action' => 'default:addEtudiant', )
+
+	0	DOMDocument->load()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsCompiler.class.php : 34
+	1	jFormsCompiler->compile()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jIncluder.class.php : 103
+	2	jIncluder::inc()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jForms.class.php : 56
+	3	jForms::create()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 281
+	4	defaultCtrl->addEtudiant()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	5	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-10 19:24:46	127.0.0.1	error	2013-05-10 19:24:46	127.0.0.1	[805]	 invalid xml syntax in jforms file (file C:\Program Files (x86)\EasyPHP-12.1\www\BDS/modules/BDS/forms/ajoutEtudiant.form.xml)	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jFormsCompiler.class.php	35
+	/BDS/www/index.php/BDS/default/addEtudiant?id_sport=1
+array (   'id_sport' => '1',   'module' => 'BDS',   'action' => 'default:addEtudiant', )
+
+	0	jFormsCompiler->compile()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jIncluder.class.php : 103
+	1	jIncluder::inc()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\forms\jForms.class.php : 56
+	2	jForms::create()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 281
+	3	defaultCtrl->addEtudiant()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	4	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+

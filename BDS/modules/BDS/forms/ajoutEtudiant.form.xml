@@ -19,7 +19,7 @@
     
     <input ref="tel">
         <label>Numero de telephone</label>
-        <help>Peut etre rempli ultérieurement</help>
+        <help>Peut etre rempli ultérieurement - De la forme 06********</help>
     </input>
     
     <radiobuttons ref="possede_voiture">

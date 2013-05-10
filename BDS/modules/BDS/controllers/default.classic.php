@@ -69,18 +69,7 @@ class defaultCtrl extends jController {
         jAuth::login($login, $password, true);
 
         if (jAuth::isConnected()) {
-            $user = jAuth::getUserSession();
-            $profilUser = $user->profil;
-
-            if ($profilUser == 0) {
-                return $this->choixDuSport();
-            } else {
-                if ($profilUser == 1) {
-                    return $this->choixDuSportVP();
-                } else {
-                    return $this->choixDuSportSU();
-                }
-            }
+            return $this->choixDuSport();
         }
         else
             return $this->ErreurConnexion();
@@ -129,56 +118,18 @@ class defaultCtrl extends jController {
 
         /* @var $rep JResponseHtml */
 
-// pour la vue
-        $rep->bodyTpl = "choixSport";
+        $user = jAuth::getUserSession();
+        $profilUser = $user->profil;
 
-// CSS
-        $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
-        $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
-
-        $choixSportForm = jForms::create("BDS~choixSportForm");
-
-// liste vers vue
-        $rep->body->assign('TITLE', 'Choix du sport');
-        $rep->body->assign('SUBTITLE', 'Veuillez choisir votre sport');
-        $rep->body->assign('SUBTITLE2', 'Navigation');
-        $rep->body->assign('FORMCHOIXSPORT', $choixSportForm);
-
-        return $rep;
-    }
-
-    function choixDuSportVP() {
-        $rep = $this->getResponse('html');
-
-        /* @var $rep JResponseHtml */
-
-// pour la vue
-        $rep->bodyTpl = "choixSportVP";
-
-// CSS
-        $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
-        $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
-
-        $choixSportForm = jForms::create("BDS~choixSportForm");
-
-// liste vers vue
-        $rep->body->assign('TITLE', 'Choix du sport');
-        $rep->body->assign('SUBTITLE', 'Veuillez choisir votre sport');
-        $rep->body->assign('SUBTITLE2', 'Navigation');
-        $rep->body->assign('FORMCHOIXSPORT', $choixSportForm);
-
-        return $rep;
-    }
-
-    function choixDuSportSU() {
-        $rep = $this->getResponse('html');
-
-        /* @var $rep JResponseHtml */
-
-// pour la vue
-        $rep->bodyTpl = "choixSportSU";
+        if ($profilUser == 0) {
+            $rep->bodyTpl = "choixSport";
+        } else {
+            if ($profilUser == 1) {
+                $rep->bodyTpl = "choixSportVP";
+            } else {
+                $rep->bodyTpl = "choixSportSU";
+            }
+        }
 
 // CSS
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
@@ -262,7 +213,14 @@ class defaultCtrl extends jController {
 
         /* @var $rep jResponseHtml */
 
-        $rep->bodyTpl = "ajouterEtudiant";
+        $user = jAuth::getUserSession();
+        $profilUser = $user->profil;
+
+        if ($profilUser == 0) {
+            $rep->bodyTpl = "ajouterEtudiant";
+        } else {
+            $rep->bodyTpl = "ajouterEtudiantVP";
+        }
 
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
@@ -318,7 +276,6 @@ class defaultCtrl extends jController {
         $courantEtudiant->id_sport = $idSport;
 
         $appartenirEqFactory->insert($courantEtudiant);
-
 
         return $this->choixDuSport();
     }
@@ -377,7 +334,14 @@ class defaultCtrl extends jController {
 
         /* @var $rep jResponseHtml */
 
-        $rep->bodyTpl = "ajouterCommentaire";
+        $user = jAuth::getUserSession();
+        $profilUser = $user->profil;
+
+        if ($profilUser == 0) {
+            $rep->bodyTpl = "ajouterCommentaire";
+        } else {
+            $rep->bodyTpl = "ajouterCommentaireVP";
+        }
 
 // thème CSS jelix
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
@@ -508,7 +472,7 @@ class defaultCtrl extends jController {
         if ($profilUser == 0) {
             return $this->choixDuSport();
         } else {
-            return $this->choixDuSportVP();
+            return $this->choixDuSport();
         }
     }
 

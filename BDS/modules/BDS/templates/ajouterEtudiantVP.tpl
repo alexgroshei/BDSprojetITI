@@ -3,7 +3,7 @@
 <div class="block">
     <h2 id="titleForm">{$SUBTITLE}</h2>
     <div class="blockcontent">
-        {formfull $FORMAJOUTABS, 'BDS~saveAbsenceToDao@classic'}
+        {formfull $FORMULAIREAJOUT, 'BDS~addEtudiantToDao@classic'}
     </div>
 </div>
 
