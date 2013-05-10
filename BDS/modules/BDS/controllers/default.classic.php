@@ -26,8 +26,7 @@ class defaultCtrl extends jController {
         'ajouterAbsence' => array('auth.required' => true),
         'saveAbsenceToDao' => array('auth.required' => true),
         'afficherInfo' => array('auth.required' => true),
-        'afficherAbs' => array('auth.required' => true),        
-        'ErreurConnexion' => array('auth.required' => true),
+        'afficherAbs' => array('auth.required' => true),
     );
 
     function index() {
