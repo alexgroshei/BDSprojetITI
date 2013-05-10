@@ -1,0 +1,48 @@
+/* 
+    Document   : mes_styles_connexion
+    Author     : GROS Alexandre - FILLIETTE Florent
+    Description:
+        CSS général
+*/
+
+h1.apptitle
+{
+    text-align: center;
+    background-color: #719694;
+}
+
+#formConnexion
+{
+    position: relative;
+    text-align: center;
+    width: 500px;
+    top: 100px;
+}
+
+
+#description
+{
+    position: relative;
+    bottom: 60px;
+    left: 530px;
+    text-align: center;
+    width: 800px;
+}
+
+#erreurConnexion
+{
+    color: red;
+    font-weight: bold;
+}
+
+div.block h2 {
+    background-color: #729671;
+    color : white;
+    text-align: center;
+}
+
+div#logo img{
+    border-style: solid;
+    border-radius: 15px;
+    margin-left: 42%;
+}

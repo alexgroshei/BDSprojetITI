@@ -42,8 +42,9 @@ class defaultCtrl extends jController {
 
 // CSS
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
-        $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink('http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css');
+        $rep->addCSSLink($chemin . 'jelix.css');        
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles_connexion.css');
+        //$rep->addCSSLink('http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css');
 
 // jQuery et jQuery UI
         $rep->addJSLink('https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js');
@@ -55,6 +56,7 @@ class defaultCtrl extends jController {
 // Valeur des zones définies
         $rep->body->assign('TITLE', 'Bienvenue sur la page de gestion d absences du Bureau Des Sports HEI');
         $rep->body->assign('SUBTITLE', 'Connexion');
+        $rep->body->assign('SUBTITLE2', 'Description');
         $rep->body->assign('FORMETUDIANT', $connexionForm);
 
         return $rep;
@@ -87,8 +89,9 @@ class defaultCtrl extends jController {
 
 // CSS
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
-        $rep->addCSSLink($chemin . 'jelix.css');
-        $rep->addCSSLink('http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css');
+        $rep->addCSSLink($chemin . 'jelix.css');        
+        $rep->addCSSLink(jApp::config()->urlengine['basePath'].'css/mes_styles_connexion.css');
+        //$rep->addCSSLink('http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css');
 
 // jQuery et jQuery UI
         $rep->addJSLink('https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js');
@@ -99,7 +102,8 @@ class defaultCtrl extends jController {
 
 // Valeur des zones définies
         $rep->body->assign('TITLE', 'Bienvenue sur la page de gestion d absences du Bureau Des Sports HEI');
-        $rep->body->assign('SUBTITLE', 'Connexion');
+        $rep->body->assign('SUBTITLE', 'Connexion');        
+        $rep->body->assign('SUBTITLE2', 'Description');
         $rep->body->assign('FORMETUDIANT', $connexionForm);
         $rep->body->assign('ERREUR', 'Identifiants incorrects');
 
