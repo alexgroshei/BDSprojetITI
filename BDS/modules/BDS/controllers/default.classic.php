@@ -9,7 +9,7 @@
  */
 class defaultCtrl extends jController {
 
-    // Fonctions permettant d'empecher les connexions intempestives
+// Fonctions permettant d'empecher les connexions intempestives
     public $pluginParams = array(
         '*' => array('auth.required' => false),
         'choixDuSport' => array('auth.required' => true),
@@ -118,9 +118,11 @@ class defaultCtrl extends jController {
 
         /* @var $rep JResponseHtml */
 
+// On récupère le profil l'utilisateur connecté
         $user = jAuth::getUserSession();
         $profilUser = $user->profil;
 
+// Redirection selon le profil de l'utilisateur
         if ($profilUser == 0) {
             $rep->bodyTpl = "choixSport";
         } else {
@@ -136,6 +138,7 @@ class defaultCtrl extends jController {
         $rep->addCSSLink($chemin . 'jelix.css');
         $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
+// Création du formulaire choixSportForm
         $choixSportForm = jForms::create("BDS~choixSportForm");
 
 // liste vers vue
@@ -165,12 +168,12 @@ class defaultCtrl extends jController {
             }
         }
 
-        //CSS
+//CSS
         $chemin = jApp::config()->urlengine['jelixWWWPath'] . 'design/';
         $rep->addCSSLink($chemin . 'jelix.css');
         $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
-        //JS
+//JS
         $rep->addCssLink('http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css');
         $rep->addJSLink('https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js');
         $rep->addJSLink('https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js');
@@ -188,12 +191,12 @@ class defaultCtrl extends jController {
         $conditions->addCondition('id_sport', '=', $idSportChoisi);
         $sport = $sportFactory->findBy($conditions);
 
-        // Cond pour affichage étudiants par sport
+// Cond pour affichage étudiants par sport
         $etudiantParSport = $appartenirEqFactory->findBy($conditions);
 
-        // Compteur d'élèves
+// Compteur d'élèves
         $countEtudiant = $appartenirEqFactory->countBy($conditions);
-
+// Valeur des zones définies
         $rep->body->assign('TITLE', 'Bienvenue sur la page ');
         $rep->body->assign('SUBTITLE1', 'Etudiants - Equipes');
         $rep->body->assign('SUBTITLE2', 'Commentaires sur ');
@@ -227,6 +230,7 @@ class defaultCtrl extends jController {
         $rep->addCSSLink($chemin . 'jelix.css');
         $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
+// On récupère le paramètre id_sport
         $sportChoisi = $this->param('id_sport');
 
 //formulaire pour ajouter Etudiant initialisé pour le sport actuel
@@ -255,12 +259,14 @@ class defaultCtrl extends jController {
         $rep->addCSSLink($chemin . 'jelix.css');
         $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
+ // On récupère les paramètres id_sport et num_equipe afin d'initialiser le formulaire
         $idSport = $this->param('id_sport');
         $numEquipe = $this->param('num_equipe');
 
         $addStudentForm = jForms::fill("BDS~ajoutEtudiant", $idSport);
         $addStudentForm->initFromRequest();
 
+// Si le formulaire est bien rempli on va sauvegarder les données dans la factory etudiant
         if ($addStudentForm->check()) {
             $result = $addStudentForm->prepareDaoFromControls('BDS~etudiant');
             $etudiantFactory = $result['dao'];
@@ -269,6 +275,7 @@ class defaultCtrl extends jController {
             $etudiantFactory->insert($courantEtudiant);
         }
 
+// On ajoute maintenant des données dans la factory appartenir_eq afin d'associer correctement l'étudiant au sport
         $appartenirEqFactory = jDao::get("appartenir_eq");
         $record = $etudiantFactory->getFewRecord();
         $courantEtudiant->id_etudiant = $record->id_etudiant;
@@ -293,10 +300,12 @@ class defaultCtrl extends jController {
         $rep->addCSSLink($chemin . 'jelix.css');
         $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
+// On récupère le paramètre id_etudiant et on crée le formulaire initialisé avec les données de l'étudiant choisi
         $paramIdStudent = $this->param('id_etudiant');
         $updateStudentForm = jForms::create("BDS~modifEtudiant", $paramIdStudent);
         $updateStudentForm->initFromDao("BDS~etudiant");
 
+// Valeur des zones définies
         $rep->body->assign('TITLE', 'Modifier un etudiant');
         $rep->body->assign('SUBTITLE', 'Modifier le forumlaire ci-dessous');
         $rep->body->assign('SUBTITLE2', 'Navigation');
@@ -307,6 +316,7 @@ class defaultCtrl extends jController {
 
     function saveEtudiant() {
 
+// on récupère les données entrées par l'utilisateur et on met à jour les données correspondantes       
         $updateStudentForm = jForms::fill("BDS~modifEtudiant", $this->param('id_etudiant'));
         $updateStudentForm->initFromRequest();
         $result = $updateStudentForm->prepareDaoFromControls('BDS~etudiant');
@@ -320,6 +330,7 @@ class defaultCtrl extends jController {
 
     function deleteEtudiant() {
 
+// On récpuère le paramètre id_etudiant afin de supprimer celui qu'on selectionne        
         $paramIdEtudiant = $this->param('id_etudiant');
 
         $etudiantFactory = jDao::get("etudiant");
@@ -364,8 +375,10 @@ class defaultCtrl extends jController {
 
     function saveCommentaire() {
 
+// On récupère le paramètre id_sport        
         $sportChoisi = $this->param('id_sport');
 
+// On récupère les données remplies par l'utilisateur afin de mettre a jour les données voulues dans la table sport        
         $form = jForms::fill("BDS~ajoutCommentaire", $sportChoisi);
         $form->initFromRequest();
 
@@ -405,9 +418,11 @@ class defaultCtrl extends jController {
 
     function saveSportToDao() {
 
+// On récupère la factory sport        
         $sportFactory = jDao::get("BDS~sport");
         $record = jDao::createRecord("BDS~sport");
 
+// On ajoute pas à pas les données remplies par l'utilisateur dans la table sport        
         $record->nom_sport = $this->param('nom_sport');
         $record->commentaire = $this->param('commentaire');
 
@@ -436,12 +451,12 @@ class defaultCtrl extends jController {
         $rep->addCSSLink($chemin . 'jelix.css');
         $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
-        // formulaire absences
+// formulaire absences
         $paramIdStudent = $this->param('id_etudiant');
         $absencesForm = jForms::create("BDS~formAbs", $paramIdStudent);
         $absencesForm->initFromDao("BDS~etudiant");
 
-        // valeur des zones définies
+// valeur des zones définies
         $rep->body->assign('TITLE', 'Ajouter une absence');
         $rep->body->assign('SUBTITLE', 'Remplir le forumlaire ci-dessous pour ajouter une absence');
         $rep->body->assign('SUBTITLE2', 'Navigation');
@@ -452,17 +467,21 @@ class defaultCtrl extends jController {
 
     function saveAbsenceToDao() {
 
+// On récupère le paramètre id_etudiant        
         $idEtudiant = $this->param('id_etudiant');
 
+// On récupère les données fournies par l'utilisateur        
         $absForm = jForms::fill("BDS~formAbs", $idEtudiant);
         $absForm->initFromRequest();
 
+// On insert l'absence dans la table absences        
         $result = $absForm->prepareDaoFromControls('BDS~absence');
         $absFactory = $result['dao'];
         $courantAbs = $result['daorec'];
 
         $absFactory->insert($courantAbs);
 
+// On met a jour cette absence avec l'id_etudiant afin que l'absence soit bien associée a l'étudiant selectionné        
         $courantAbs->id_etudiant = $idEtudiant;
         $absFactory->update($courantAbs);
 
@@ -500,13 +519,14 @@ class defaultCtrl extends jController {
         $rep->addCSSLink($chemin . 'jelix.css');
         $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
-        // Factory etudiant
+// Factory etudiant
         $etudiantFactory = jDao::get('BDS~etudiant');
         $etudiant = $this->param('id_etudiant');
         $conditions = jDao::createConditions();
         $conditions->addCondition('id_etudiant', '=', $etudiant);
         $infoEtudiant = $etudiantFactory->findBy($conditions);
 
+// Valeur des zones définies
         $rep->body->assign('TITLE', 'Informations personnelles');
         $rep->body->assign('SUBTITLE', 'Voici quelques informations personnelles');
         $rep->body->assign('SUBTITLE2', 'Navigation');
@@ -539,7 +559,7 @@ class defaultCtrl extends jController {
         $rep->addCSSLink($chemin . 'jelix.css');
         $rep->addCSSLink(jApp::config()->urlengine['basePath'] . 'css/mes_styles.css');
 
-        // Factory absences
+// Factory absences
         $absFactory = jDao::get('BDS~absence');
         $idEtudiant = $this->param('id_etudiant');
         $conditions = jDao::createConditions();
@@ -547,6 +567,7 @@ class defaultCtrl extends jController {
         $absEtudiant = $absFactory->findBy($conditions);
         $countEtudiant = $absFactory->countBy($conditions);
 
+// Valeur des zones définies
         $rep->body->assign('TITLE', 'Absences de l\'etudiant');
         $rep->body->assign('SUBTITLE', 'Liste des absences');
         $rep->body->assign('SUBTITLE2', 'Navigation');
