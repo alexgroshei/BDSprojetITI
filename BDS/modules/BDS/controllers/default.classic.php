@@ -72,10 +72,10 @@ class defaultCtrl extends jController {
             return $this->choixDuSport();
         }
         else
-            return $this->ErreurConnexion();
+            return $this->erreurConnexion();
     }
 
-    function ErreurConnexion() {
+    function erreurConnexion() {
 
         jAuth::logout();
 

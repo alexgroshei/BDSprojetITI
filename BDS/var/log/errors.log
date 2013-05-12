@@ -7024,3 +7024,22 @@ array (   'id_sport' => '1',   'module' => 'BDS',   'action' => 'default:addEtud
 	4	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
 
 
+2013-05-12 14:26:19	127.0.0.1	error	2013-05-12 14:26:19	127.0.0.1	[403]	invalid query (Cannot add or update a child row: a foreign key constraint fails (`bds_absences`.`appartenir_eq`, CONSTRAINT `appartenir_eq_ibfk_2` FOREIGN KEY (`id_sport`) REFERENCES `equipe` (`id_sport`) ON DELETE CASCADE ON UPDATE CASCADE)(INSERT INTO `appartenir_eq` (	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\plugins\db\mysql\mysql.dbconnection.php	128
+	/BDS/www/index.php/BDS/default/addEtudiantToDao
+array (   'module' => 'BDS',   'action' => 'default:addEtudiantToDao',   'id_etudiant' => '',   'id_sport' => '46',   '__JFORMS_TOKEN__' => '7492618cfc657d24d856f8b3389b970e',   'nom' => 'test',   'prenom' => 'test',   'classe' => '',   'tel' => '',   'num_licence' => '',   'date_remise_certif' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'date_remise_cotis' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'nom_sport' => 'Test',   'num_equipe' => '1',   'login' => 'test@hei.fr',   'password' => 'test',   'profil' => '0',   'submit' => 'Valider', )
+
+	0	mysqlDbConnection->_doExec()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\db\jDbConnection.class.php : 147
+	1	jDbConnection->exec()	C:\Program Files (x86)\EasyPHP-12.1\www\temp\BDS\www\compiled\daos\modules\BDS~appartenir_eq~mysql.php : 237
+	2	cDao_BDS_Jx_appartenir_eq_Jx_mysql->insert()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php : 285
+	3	defaultCtrl->addEtudiantToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	4	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
+2013-05-12 14:26:25	127.0.0.1	notice	2013-05-12 14:26:25	127.0.0.1	[8]	Undefined variable: etudiantFactory	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\modules\BDS\controllers\default.classic.php	280
+	/BDS/www/index.php/BDS/default/addEtudiantToDao
+array (   'module' => 'BDS',   'action' => 'default:addEtudiantToDao',   'id_etudiant' => '',   'id_sport' => '46',   '__JFORMS_TOKEN__' => '7492618cfc657d24d856f8b3389b970e',   'nom' => 'test',   'prenom' => 'test',   'classe' => '',   'tel' => '',   'num_licence' => '',   'date_remise_certif' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'date_remise_cotis' =>    array (     'month' => '',     'day' => '',     'year' => '',   ),   'nom_sport' => 'Test',   'num_equipe' => '',   'login' => 'test@hei.fr',   'password' => 'test',   'profil' => '0',   'submit' => 'Valider', )
+
+	0	defaultCtrl->addEtudiantToDao()	C:\Program Files (x86)\EasyPHP-12.1\www\jelix\lib\jelix\core\jCoordinator.class.php : 195
+	1	jCoordinator->process()	C:\Program Files (x86)\EasyPHP-12.1\www\BDS\www\index.php : 19
+
+
