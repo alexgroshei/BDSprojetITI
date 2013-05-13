@@ -15,7 +15,7 @@ h1.apptitle
 {
     position: relative;
     text-align: center;
-    width: 500px;
+    width: 37%;
     top: 100px;
 }
 
@@ -24,7 +24,7 @@ h1.apptitle
 {
     position: relative;
     bottom: 60px;
-    left: 530px;
+    left: 39%;
     text-align: center;
     width: 800px;
 }

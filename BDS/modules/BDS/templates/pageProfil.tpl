@@ -13,6 +13,11 @@
                     - Equipe {$COURANTETUDIANTSPORT->num_equipe}<br>
 
                     <div id="liens">
+                        
+                        <a href="{jurl 'BDS~afficherInfo@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}">
+                            [Informations]
+                        </a>
+                            
                         <a href="{jurl 'BDS~updateEtudiant@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}">
                             [Modifier]
                         </a>
@@ -20,10 +25,6 @@
                         <a id="supprimer" href="{jurl 'BDS~deleteEtudiant@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}"
                            onclick="return confirmDelete()">
                             [Supprimer]
-                        </a>
-
-                        <a href="{jurl 'BDS~afficherInfo@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}">
-                            [Informations]
                         </a><br> 
 
                         <a href="{jurl 'BDS~ajouterAbsence@classic', array('id_etudiant'=>$COURANTETUDIANTSPORT->id_etudiant)}">

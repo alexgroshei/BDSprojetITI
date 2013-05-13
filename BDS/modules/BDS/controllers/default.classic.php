@@ -48,7 +48,7 @@ class defaultCtrl extends jController {
 // jQuery et jQuery UI
         $rep->addJSLink('https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js');
         $rep->addJSLink('https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js');
-
+        
 // Formulaire
         $connexionForm = jForms::create("BDS~connexionEtudiant");
 
